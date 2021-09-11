@@ -49,7 +49,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :weibo_database, 'not_change_will_be_set_by_database', 'not_change_will_be_set_by_database'
 
   # discord database connect
-  provider :discord_database, 'not_change_will_be_set_by_database', 'not_change_will_be_set_by_database', scope: 'identify', callback_url: '/auth/discord/callback'
+  provider :discord_database, 'not_change_will_be_set_by_database', 'not_change_will_be_set_by_database', scope: 'identify'
 
   # SAML database connect
   provider :saml_database
