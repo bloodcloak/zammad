@@ -93,7 +93,7 @@ gem 'omniauth-microsoft-office365'
 gem 'omniauth-saml'
 gem 'omniauth-twitter'
 gem 'omniauth-weibo-oauth2'
-gem 'omniauth-discord'
+gem 'omniauth-discord', git: 'https://github.com/bloodcloak/omniauth-discord.git'
 
 # channels
 gem 'gmail_xoauth'
