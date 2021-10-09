@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/bloodcloak/omniauth-discord.git
-  revision: 89d989b55cd12e76bb62a2961775f7f84eb455cb
+  revision: 20f1151f0e74e6ca5b97491425a37bd27dd78688
   specs:
     omniauth-discord (1.0.2)
       omniauth
