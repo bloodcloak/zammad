@@ -2208,6 +2208,7 @@ textarea.form-control {
 
 select.form-control:not([multiple]) {
   @include bidi-style(padding-right, 34px, padding-left, 12px);
+  max-width: 500px;
   word-wrap: normal;
 }
 
