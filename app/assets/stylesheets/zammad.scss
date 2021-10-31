@@ -401,7 +401,7 @@ pre code.hljs {
 .form-control::placeholder,
 .token-input::placeholder,
 .u-placeholder {
-  color: hsl(0,0%,80%);
+  color: #949494;
 }
 
 .btn {
@@ -1156,7 +1156,7 @@ pre code.hljs {
     font-weight: inherit;
     text-align: inherit;
     line-height: inherit;
-    color: #d0d2d3;
+    color: #4D595B;
     background: none;
     border-radius: 0;
     vertical-align: baseline;
@@ -1652,7 +1652,7 @@ label,
 .checkbox.form-group label,
 .label {
   text-transform: uppercase;
-  color: hsl(198,15%,69%);
+  color: #4D595B;
   display: block;
   font-size: 13px;
   font-weight: normal;
@@ -2862,11 +2862,11 @@ kbd {
 .page-content {
   .formGroup-label label,
   .label {
-    color: hsl(197,18%,70%);
+    color: #4D595B;
   }
   .help-text,
   .help-block {
-    color: hsl(198,19%,72%);
+    color: #4D595B;
   }
   .content-controls-align-right {
     display: flex;
@@ -3120,8 +3120,8 @@ ol.tabs li {
   display: flex;
   padding: 0;
   margin-bottom: 20px;
-  color: #b8b8b8;
-  border: 1px solid rgba(0,8,14,.08);
+  color: #595959;
+  border: 1px solid #595959;
   border-radius: 3px;
   background: white;
 
@@ -3147,7 +3147,7 @@ ol.tabs li {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid rgba(0,8,14,.08);
+    border-right: 1px solid #595959;
     min-width: 0;
     flex-grow: 1;
     @extend .u-clickable;
@@ -4078,7 +4078,7 @@ footer {
   .menu-item {
     padding: 0 15px;
     height: 48px;
-    color: rgba(240, 250, 255, .25);
+    color: #FFFFFF;
     border-bottom: 1px solid rgba(240, 250, 255, .05);
     text-decoration: none;
     display: flex;
@@ -4164,7 +4164,7 @@ footer {
     @include bidi-style(margin-right, 15px, margin-left, 0);
     width: 24px;
     height: 24px;
-    fill: hsl(206,7%,37%);
+    fill: #FFFFFF;
 
     @include phone {
       @include bidi-style(margin-right, 0, margin-left, 0);
@@ -4287,7 +4287,7 @@ footer {
   .nav-tab {
     @include bidi-style(padding, 10px 15px 9px 0, padding, 10px 0 9px 15px);
     position: relative;
-    color: #808080;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     @extend .u-clickable;
@@ -5330,7 +5330,7 @@ footer {
 
   a.list-group-item.active > .badge,
   .nav-pills > .active > a > .badge {
-    color: #96969b;
+    color: currentColor;
     background: none;
   }
 
@@ -5740,7 +5740,7 @@ footer {
     }
 
     .stat-detail {
-      color: #b4b7b9;
+      color: #595959;
       @extend .u-textTruncate;
     }
 
@@ -7575,7 +7575,7 @@ footer {
   }
 
   .sidebar .text-muted {
-    color: hsl(198,22%,82%);
+    color: #4D595B;
   }
 
 .alert {
@@ -7951,7 +7951,7 @@ footer {
 .type-tabs .tab-icon {
   width: 17px;
   height: 17px;
-  fill: #ccc;
+  fill: #595959;
   vertical-align: top;
   @include bidi-style(margin-right, 9px, margin-left, 0);
   margin-top: 11px;
@@ -9004,7 +9004,7 @@ footer {
 
 .nav-tabs li {
   margin: 0;
-  color: hsl(0,0%,70%);
+  color: #595959;
   border: 1px solid hsl(0,0%,90%);
   margin-left: -1px;
   background: white;
