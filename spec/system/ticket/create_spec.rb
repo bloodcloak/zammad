@@ -665,4 +665,91 @@ RSpec.describe 'Ticket Create', type: :system do
       expect(Ticket.last.pending_time).to be nil
     end
   end
+
+  describe 'When looking for customers, it is no longer possible to change into organizations #3815' do
+    before do
+      visit 'ticket/create'
+
+      # modal reaper ;)
+      sleep 3
+    end
+
+    context 'when less than 10 customers' do
+      let(:organization) { Organization.first }
+
+      it 'has no show more option' do
+        find('[name=customer_id_completion]').fill_in with: 'zam'
+        expect(page).to have_selector("li.js-organization[data-organization-id='#{organization.id}']")
+        page.find("li.js-organization[data-organization-id='#{organization.id}']").click
+        expect(page).to have_selector("ul.recipientList-organizationMembers[organization-id='#{organization.id}'] li.js-showMoreMembers.hidden", visible: :all)
+      end
+    end
+
+    context 'when more than 10 customers', authenticated_as: :authenticate do
+      def authenticate
+        customers
+        true
+      end
+
+      let(:organization) { create(:organization, name: 'Zammed') }
+      let(:customers) do
+        create_list(:customer, 50, organization: organization)
+      end
+
+      it 'does paginate through organization' do
+        find('[name=customer_id_completion]').fill_in with: 'zam'
+        expect(page).to have_selector("li.js-organization[data-organization-id='#{organization.id}']")
+        page.find("li.js-organization[data-organization-id='#{organization.id}']").click
+        wait(5).until { page.all("ul.recipientList-organizationMembers[organization-id='#{organization.id}'] li", visible: :all).count == 12 } # 10 users + back + show more button
+
+        expect(page).to have_selector("ul.recipientList-organizationMembers[organization-id='#{organization.id}'] li.js-showMoreMembers[organization-member-limit='10']")
+        scroll_into_view('li.js-showMoreMembers')
+        page.find("ul.recipientList-organizationMembers[organization-id='#{organization.id}'] li.js-showMoreMembers").click
+        wait(5).until { page.all("ul.recipientList-organizationMembers[organization-id='#{organization.id}'] li", visible: :all).count == 27 } # 25 users + back + show more button
+
+        expect(page).to have_selector("ul.recipientList-organizationMembers[organization-id='#{organization.id}'] li.js-showMoreMembers[organization-member-limit='25']")
+        scroll_into_view('li.js-showMoreMembers')
+        page.find("ul.recipientList-organizationMembers[organization-id='#{organization.id}'] li.js-showMoreMembers").click
+        wait(5).until { page.all("ul.recipientList-organizationMembers[organization-id='#{organization.id}'] li", visible: :all).count == 52 } # 50 users + back + show more button
+
+        scroll_into_view('li.js-showMoreMembers')
+        expect(page).to have_selector("ul.recipientList-organizationMembers[organization-id='#{organization.id}'] li.js-showMoreMembers.hidden", visible: :all, wait: 20)
+      end
+    end
+  end
+
+  describe 'Ticket create screen will loose attachments by time #3827' do
+    before do
+      visit 'ticket/create'
+    end
+
+    it 'does not loose attachments on rerender of the ui' do
+      # upload two files
+      page.find('input#fileUpload_1', visible: :all).set(Rails.root.join('test/data/mail/mail001.box'))
+      await_empty_ajax_queue
+      page.find('input#fileUpload_1', visible: :all).set(Rails.root.join('test/data/mail/mail002.box'))
+      await_empty_ajax_queue
+      wait(5).until { page.all('div.attachment-delete.js-delete', visible: :all).count == 2 }
+      expect(page).to have_text('mail001.box')
+      expect(page).to have_text('mail002.box')
+
+      # remove last file
+      begin
+        page.evaluate_script("$('div.attachment-delete.js-delete:last').click()") # not interactable
+      rescue # Lint/SuppressedException
+        # because its not interactable it also
+        # returns this weird exception for the jquery
+        # even tho it worked fine
+      end
+      await_empty_ajax_queue
+      wait(5).until { page.all('div.attachment-delete.js-delete', visible: :all).count == 1 }
+      expect(page).to have_text('mail001.box')
+      expect(page).to have_no_text('mail002.box')
+
+      # simulate rerender b
+      page.evaluate_script("App.Event.trigger('ui:rerender')")
+      expect(page).to have_text('mail001.box')
+      expect(page).to have_no_text('mail002.box')
+    end
+  end
 end
