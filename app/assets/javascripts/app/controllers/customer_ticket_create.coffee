@@ -103,8 +103,8 @@ class CustomerTicketCreate extends App.ControllerAppContent
     new App.ControllerDrox(
       el:   @el.find('.sidebar')
       data:
-        header: App.i18n.translateInline('What can you do here?')
-        html:   App.i18n.translateInline('The way to communicate with us is this thing called "ticket".') + ' ' + App.i18n.translateInline('Here you can create one.')
+        header: 'Send a message to the staff!'
+        html:   'If you need help with modding your game, please use either the #pc-help or #quest-help channel in the server https://discord.gg/beatsabermods' + ' ' + 'For issues relating to Bsaber, please contact them in their discord at https://discord.gg/VJZHUbt'
     )
 
   cancel: ->
