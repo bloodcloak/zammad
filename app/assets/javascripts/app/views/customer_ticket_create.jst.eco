@@ -17,7 +17,7 @@
               <div class="ticket-form-bottom"></div>
             </div>
 
-            <p><%- @T("Provide and/or attach additional information in the field below.") %></p>
+            <p><%- @T("Enter your message and/or attach additional information in the field below.") %></p>
             <div class="article-form-top"></div>
 
             <div class="form-controls">

@@ -104,7 +104,7 @@ class CustomerTicketCreate extends App.ControllerAppContent
       el:   @el.find('.sidebar')
       data:
         header: 'Send a message to the staff!'
-        html:   'If you need help with modding your game, please use either the #pc-help or #quest-help channel in the server https://discord.gg/beatsabermods' + ' ' + 'For issues relating to Bsaber, please contact them in their discord at https://discord.gg/VJZHUbt'
+        html:   'If you need help with modding your game, please use either the #pc-help or #quest-help channel in the <a href="https://discord.gg/beatsabermods">BSMG server</a>' + '<br/>' + 'For issues relating to BeastSaber, please contact them in their <a href="https://discord.gg/VJZHUbt">Bsaber Discord</a>'
     )
 
   cancel: ->
