@@ -563,6 +563,25 @@ RSpec.describe 'Ticket Create', type: :system do
     end
   end
 
+  context 'when state options have a special translation', authenticated_as: :authenticate do
+    let(:admin_de) { create(:admin, preferences: { locale: 'de-de' }) }
+
+    context 'when translated state option has a single quote' do
+      def authenticate
+        open_tranlation = Translation.where(locale: 'de-de', source: 'open')
+        open_tranlation.update(target: "off'en")
+
+        admin_de
+      end
+
+      it 'shows the translated state options correctly' do
+        visit 'ticket/create'
+
+        expect(page).to have_select('state_id', with_options: ["off'en"])
+      end
+    end
+  end
+
   describe 'It should be possible to show attributes which are configured shown false #3726', authenticated_as: :authenticate, db_strategy: :reset do
     let(:field_name) { SecureRandom.uuid }
     let(:field) do
@@ -750,6 +769,19 @@ RSpec.describe 'Ticket Create', type: :system do
       page.evaluate_script("App.Event.trigger('ui:rerender')")
       expect(page).to have_text('mail001.box')
       expect(page).to have_no_text('mail002.box')
+    end
+  end
+
+  describe 'Invalid group and owner list for tickets created via customer profile #3835' do
+    let(:invalid_ticket) { create(:ticket) }
+
+    before do
+      visit "#ticket/create/id/#{invalid_ticket.id}/customer/#{User.find_by(firstname: 'Nicole').id}"
+    end
+
+    it 'does show an empty list of owners' do
+      wait(5).until { page.all('select[name=owner_id] option').count == 1 }
+      expect(page.all('select[name=owner_id] option').count).to eq(1)
     end
   end
 end
