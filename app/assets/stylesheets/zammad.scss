@@ -5135,7 +5135,7 @@ footer {
   position: relative;
   width: 280px;
   padding: 20px;
-  color: hsl(60,1%,34%);
+  color: rgb(49, 49, 49);
   background: white;
   @include bidi-style(border-right, 1px solid #e6e6e6, border-left, none);
   overflow: auto;
