@@ -705,10 +705,10 @@ pre code.hljs {
 
     &.btn--subtle {
       text-decoration: underline;
-      color: hsl(0,0%,85%);
+      color: rgb(119, 119, 119);
 
       &:active {
-        color: hsl(0,0%,75%);
+        color: rgb(83, 83, 83);
       }
     }
 
