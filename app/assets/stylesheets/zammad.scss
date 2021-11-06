@@ -5135,7 +5135,7 @@ footer {
   position: relative;
   width: 280px;
   padding: 20px;
-  color: rgb(49, 49, 49);
+  color: rgb(14, 14, 14);
   background: white;
   @include bidi-style(border-right, 1px solid #e6e6e6, border-left, none);
   overflow: auto;
@@ -6188,10 +6188,6 @@ footer {
 
 .ticketZoom {
   background: #f8f9fa;
-}
-
-.ticketZoom .sidebar {
-  width: 700px;
 }
 
 .ticketZoom-controls {
@@ -7579,7 +7575,7 @@ footer {
   }
 
   .sidebar .text-muted {
-    color: #4D595B;
+    color: #242a2b;
   }
 
 .alert {
