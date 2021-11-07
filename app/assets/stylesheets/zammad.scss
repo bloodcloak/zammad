@@ -6043,7 +6043,7 @@ footer {
       left: -12px;
       bottom: 0;
       width: 3px;
-      background: repeating-linear-gradient(45deg, hsl(193,18%,90%), hsl(193,18%,90%) 5px, transparent 5px, transparent 9px) repeat center;
+      background: repeating-linear-gradient(45deg, #db700b, #db700b 5px, transparent 5px, transparent 9px) repeat center;
       background-size: 11px 11px;
     }
 
@@ -6056,20 +6056,19 @@ footer {
     }
 
     .form-group.is-changed label {
-      color: hsl(198,19%,72%);
       position: relative;
     }
 
     .form-group.is-changed label:before {
       position: absolute;
       content: '';
-      left: -10px;
-      width: 5px;
-      height: 5px;
-      top: 50%;
-      margin-top: -3px;
+      left: 5px;
+      width: 230px;
+      height: 2px;
+      top: 100%;
+      margin-top: -1px;
       border-radius: 100%;
-      background: hsl(198,19%,72%);
+      background: #db700b;
     }
 
   .form-inline .form-group .btn {
@@ -7429,7 +7428,7 @@ footer {
     top: 50%;
     margin-top: -3px;
     border-radius: 100%;
-    background: hsl(198,19%,72%);
+    background: #db700b;
     box-shadow: 0 0 0 2px hsl(210,17%,98%);
   }
 
@@ -7445,15 +7444,15 @@ footer {
   .tabsSidebar-tab .icon {
     width: 24px;
     height: 24px;
-    fill: hsl(197,19%,78%);
+    fill: #585b5e;
   }
 
   .tabsSidebar-tab.active {
     .tabsSidebar-tab-count {
-      background: hsl(206,7%,37%);
+      background: #1d85db;
 
       &:after {
-        border-right-color: hsl(206,7%,37%);
+        border-right-color: #1d85db;
       }
 
       &.tabsSidebar-tab-count--info {
@@ -7494,7 +7493,7 @@ footer {
     }
 
     .icon {
-      fill: hsl(206,7%,37%);
+      fill: #1d85db;
     }
   }
 
@@ -7502,7 +7501,7 @@ footer {
     position: absolute;
     left: 9px;
     top: 5px;
-    background: hsl(197,19%,78%);
+    background: #585b5e;
     width: 16px;
     height: 13px;
     text-align: center;
@@ -7534,7 +7533,7 @@ footer {
       top: 100%;
       right: 20%;
       border-bottom: 3px solid transparent;
-      border-right: 5px solid hsl(197,19%,78%);
+      border-right: 5px solid #585b5e;
     }
 
     &.tabsSidebar-tab-count--info {
