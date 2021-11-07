@@ -11,12 +11,14 @@
             <input type="hidden" name="form_id" value="<%= @form_id %>"/>
 
             <div class="ticket-form-top"></div>
-            <div class="article-form-top"></div>
 
             <div class="formset-inset">
               <div class="ticket-form-middle horizontal two-columns"></div>
               <div class="ticket-form-bottom"></div>
             </div>
+
+            <p><%- @T("Enter your message and/or attach additional information in the field below.") %></p>
+            <div class="article-form-top"></div>
 
             <div class="form-controls">
               <a class="btn btn--text btn--subtle js-cancel" href="#/"><%- @T('Cancel & Go Back') %></a>

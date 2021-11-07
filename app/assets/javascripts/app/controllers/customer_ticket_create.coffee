@@ -89,8 +89,8 @@ class CustomerTicketCreate extends App.ControllerAppContent
     new App.ControllerDrox(
       el:   @el.find('.sidebar')
       data:
-        header: App.i18n.translateInline('What can you do here?')
-        html:   App.i18n.translateInline('The way to communicate with us is this thing called "ticket".') + ' ' + App.i18n.translateInline('Here you can create one.')
+        header: 'Send a message to staff!'
+        html:   'If you need help with modding your game, please use either the #pc-help or #quest-help channel in the <a href="https://discord.gg/beatsabermods">BSMG Server</a>' + '<br/><br/>' + 'For issues relating to the BeastSaber Website, please contact them in the <a href="https://discord.gg/VJZHUbt">BeastSaber Discord</a>' + '<br/><br/>' + 'To obtain a User ID, check out this <a href="https://support.discord.com/hc/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-">Discord Support Article</a> on how to find/enable this feature.'
     )
 
   cancel: ->
