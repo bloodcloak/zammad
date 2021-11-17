@@ -10,16 +10,16 @@
           <p>
             <%- @T('If you need help with modding your game, please use either the #pc-help or #quest-help channel in the ') %>
             <a href="https://discord.gg/beatsabermods"><%- @T('BSMG Server') %></a>
-            <br>
+            <br><br>
             <%- @T('For issues relating to the BeastSaber Website, please contact them in the ') %>
             <a href="https://discord.gg/VJZHUbt"><%- @T('BeastSaber Discord') %></a>
-            <br>
+            <br><br>
             <%- @T('To obtain a User ID, check out this ') %>
             <a href="https://support.discord.com/hc/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-"><%- @T('Discord Support Article') %></a>
             <%- @T(' on how to find/enable this feature.') %>
-            <br>
+            <br><br>
             <%- @T('If you are contacting us to appeal a Ban or Mute, keep in mind it may take up to 3 to 5 weeks for your appeal to be processed.') %>
-            <br>
+            <br><br>
             <%- @T('Our primary method to reach out to you about your ticket is through Discord. Please keep an eye on your friend requests or allow Direct Messages from BSMG server members.') %>
             <br>
           </p>
