@@ -20,7 +20,7 @@
             <br>
             <%- @T('If you are contacting us to appeal a Ban or Mute, keep in mind it may take up to 3 to 5 weeks for your appeal to be processed.') %>
             <br>
-            <%- @T('Our primary method to reach out to you about your ticket is through Discord. Please keep an eye on your friend requests and/or allow DM's from BSMG server members.') %>
+            <%- @T('Our primary method to reach out to you about your ticket is through Discord. Please keep an eye on your friend requests or allow Direct Messages from BSMG server members.') %>
             <br>
           </p>
         
