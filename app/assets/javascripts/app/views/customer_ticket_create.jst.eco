@@ -14,6 +14,9 @@
             <%- @T('For issues relating to the BeastSaber Website, please contact them in the ') %>
             <a href="https://discord.gg/VJZHUbt"><%- @T('BeastSaber Discord') %></a>
             <br><br>
+            <%- @T('For issues relating to the BeatSaver Website, please contact them in the ') %>
+            <a href="https://discord.gg/rjVDapkMmj"><%- @T('BeatSaver Discord') %></a>
+            <br><br>
             <%- @T('To obtain a User ID, check out this ') %>
             <a href="https://support.discord.com/hc/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-"><%- @T('Discord Support Article') %></a>
             <%- @T(' on how to find/enable this feature.') %>
@@ -24,7 +27,7 @@
             <a href="https://bsmg.wiki/about/staff.html"><%- @T('BSMG Staff Member') %></a>
             <%- @T(' or ') %>
             <a href="https://bsmg.wiki/about/moderators.html"><%- @T('Moderator') %></a>
-            <br>
+            <br><br>
           </p>
         
           <form role="form" class="ticket-create" autocomplete="off">
