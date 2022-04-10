@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/bloodcloak/omniauth-discord.git
+  revision: 2b269e5d729c30e748af0641c7e3e8a9e2d60f60
+  specs:
+    omniauth-discord (1.0.2)
+      omniauth
+      omniauth-oauth2
+
+GIT
   remote: https://github.com/zammad-deps/autodiscover
   revision: ee9b53dfa797ce6d4f970b82beea7fbdd2df56bb
   specs:
@@ -643,6 +651,7 @@ DEPENDENCIES
   mysql2
   net-ldap
   oauth2
+  omniauth-discord!
   omniauth-facebook
   omniauth-github
   omniauth-gitlab
