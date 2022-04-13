@@ -87,6 +87,10 @@
         <a href="#signup"><%- @T('Register as a new customer') %></a>
       </p>
     <% end %>
+    <hr>
+      <p>
+        <a href="https://contact.bsmg.dev/privacy"><%- @T('Privacy Policy') %></a>
+      </p>
     </div>
   </div>
   <div class="poweredBy">
