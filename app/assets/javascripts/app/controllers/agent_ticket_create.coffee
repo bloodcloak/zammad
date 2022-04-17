@@ -451,8 +451,6 @@ class App.TicketCreate extends App.Controller
       taskKey: @taskKey
     )
 
-    $('#tags').tokenfield()
-
     @sidebarWidget = new App.TicketCreateSidebar(
       el:           @sidebar
       params:       @formDefault
