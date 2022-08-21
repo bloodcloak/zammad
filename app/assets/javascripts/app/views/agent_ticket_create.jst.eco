@@ -7,7 +7,12 @@
         </div>
 
         <div class="page-content">
-          <p><%- @T("This field does not matter. You can leave as default Received Call.") %></p>
+          <p>
+            <%- @T('Need help creating a ticket or forget how to? You can review our ') %>
+            <a href="https://bsmg.dev/contactagentinterfaceguide"><%- @T('Agent Interface Guide') %></a>
+            <br><br>
+            <%- @T("This field does not matter. You can leave at the default option, Received Call.") %>
+          </p>
           <% if !_.isEmpty(@availableTypes) && @availableTypes.length > 1: %>
             <ul class="tabs type-tabs">
               <% for type in @availableTypes: %>
@@ -30,7 +35,7 @@
             <input type="hidden" name="shared_draft_id" value="<%= @shared_draft_id %>"/>
             <input type="hidden" name="form_id" value="<%= @form_id %>"/>
             <div class="ticket-form-top"></div>
-            <p><%- @T("Enter your own username in the customer field!") %></p>
+            <p><%- @T("Enter your own Discord User ID in the customer field and select your account. DO NOT use the create a new customer option!!!") %></p>
             <div class="form-group js-securityOptions hide">
               <div class="formGroup-label">
                 <label for=""><%- @T('Security') %></label>
