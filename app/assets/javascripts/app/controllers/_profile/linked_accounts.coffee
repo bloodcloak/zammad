@@ -101,6 +101,11 @@ App.Config.set('auth_provider_all', {
     name:   __('Weibo')
     config: 'auth_weibo'
     class:  'weibo'
+  discord:
+    url:    '/auth/discord'
+    name:   'Discord'
+    config: 'auth_discord'
+    class:  'discord'
   saml:
     url:    '/auth/saml'
     name:   __('SAML')

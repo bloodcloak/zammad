@@ -1,10 +1,8 @@
 <div class="login fullscreen">
   <div class="fullscreen-center">
     <div class="fullscreen-body">
-      <p><%- @T('Log in to %s', @C('fqdn')) %></p>
-
       <% if @C('maintenance_mode'): %>
-        <div class="hero-unit alert alert--danger js-maintenanceMode"><%- @T('Zammad is currently in maintenance mode. Only administrators can log in. Please wait until the maintenance window is over.') %></div>
+        <div class="hero-unit alert alert--danger js-maintenanceMode"><%- @T('System is currently in maintenance mode. Only administrators can login. Please wait until the maintenance window is over.') %></div>
       <% end %>
       <% if @C('maintenance_login') && @C('maintenance_login_message'): %>
         <div class="hero-unit alert alert--success js-maintenanceLogin"><%- @C('maintenance_login_message') %></div>
@@ -12,6 +10,26 @@
 
       <div class="hero-unit">
         <img class="company-logo" src="<%= @logoUrl %>" alt="<%= @C('product_name') %>">
+        <% if !_.isEmpty(@auth_providers): %>
+          <div class="separator">
+            <span class="separator-text"><%- @T('welcome! to get started, sign in using') %></span>
+          </div>
+
+          <div class="auth-providers">
+            <% for auth_provider in @auth_providers: %>
+              <form method="post" action="<%= auth_provider.url %>">
+                <input type="hidden" name="authenticity_token" value="<%= Spine.Ajax.defaults.headers['X-CSRF-Token'] %>">
+                <button type="submit" class="auth-provider auth-provider--<%= auth_provider.class %>">
+                  <%- @Icon("#{auth_provider.class}-button", 'provider-icon') %>
+                  <span class="provider-name"><%- @T(auth_provider.name) %></span>
+                </button>
+              </form>
+            <% end %>
+          </div>
+          <div class="separator">
+            <span class="separator-text"><%- @T('administrators') %></span>
+          </div>
+        <% end %>
         <form id="login">
           <% if @item.errorMessage: %>
             <div class="alert alert--danger" role="alert">
@@ -21,7 +39,7 @@
 
           <div class="form-group">
             <div class="formGroup-label">
-              <label for="username"><%- @Ti('Username / email') %></label>
+              <label for="username"><%- @Ti('Admin Username') %></label>
             </div>
             <input id="username" name="username" type="text" class="form-control" value="<%= @item.username %>" autocapitalize="off" />
           </div>
@@ -55,27 +73,9 @@
           </div>
 
         </form>
-        <% if !_.isEmpty(@auth_providers): %>
-          <div class="separator">
-            <span class="separator-text"><%- @T('or sign in using') %></span>
-          </div>
-
-          <div class="auth-providers">
-            <% for auth_provider in @auth_providers: %>
-              <form method="post" action="<%= auth_provider.url %>">
-                <input type="hidden" name="authenticity_token" value="<%= Spine.Ajax.defaults.headers['X-CSRF-Token'] %>">
-                <button type="submit" class="auth-provider auth-provider--<%= auth_provider.class %>">
-                  <%- @Icon("#{auth_provider.class}-button", 'provider-icon') %>
-                  <span class="provider-name"><%- @T(auth_provider.name) %></span>
-                </button>
-              </form>
-            <% end %>
-          </div>
-        <% end %>
       </div>
 
       <p>
-        <%- @T("You're already registered with your email address if you've been in touch with our Support team.") %><br>
         <% if @C('user_lost_password'): %>
           <%- @T('You can request your password') %> <a href="#password_reset"><%- @T('here') %></a>.
         <% end %>
