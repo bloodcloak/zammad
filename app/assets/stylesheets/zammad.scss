@@ -1882,7 +1882,7 @@ fieldset > .form-group {
     opacity: 0.5;
   }
 
-  &.is-readonly {
+  &.is-readonly .controls:not(.ignore-readonly) {
     pointer-events: none;
     cursor: not-allowed !important;
   }
@@ -13177,6 +13177,10 @@ body.fit {
 
 .flex-shrink {
   flex: 0 1 auto;
+}
+
+.flex-no-shrink {
+  flex-shrink: 0;
 }
 
 .flex-none {
