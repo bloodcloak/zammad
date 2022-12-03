@@ -161,7 +161,11 @@
             for (i = 0; i < len; i += 1) {
                 file = files[i];
                 if (file.size === 0) {
-                    alert('Files with files size zero cannot be uploaded or multiple file uploads are not supported by your browser');
+                    alert('Error: Files with size zero cannot be uploaded or multiple file uploads are not supported by your browser');
+                    break;
+                }
+                if (file.size > 5000000) {
+                    alert('Error: File exceeds max attachment size (5MB)');
                     break;
                 }
 
