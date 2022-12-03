@@ -16,23 +16,23 @@ $mobileNavigationWidthOpen: 220px;
   --button-primary-background: hsl(203, 65%, 55%);
   --button-primary-background-active: hsl(203, 65%, 45%);
   --header-primary: hsl(202, 8%, 28%);
-  --header-secondary: hsl(198, 10%, 69%);
-  --text-normal: hsl(60, 1%, 34%);
-  --text-muted: hsl(213, 3%, 64%);
+  --header-secondary: #4D595B;
+  --text-normal: rgb(90, 90, 90);
+  --text-muted: rgb(110, 110, 110);
   --text-muted-highlight: hsl(205, 90%, 90%);
   --text-muted-alt: hsl(197, 16%, 65%);
   --text-link: hsl(204, 72%, 50%);
   --text-inverted: white;
   --text-nav: hsl(204, 72%, 50%);
-  --menu-text: hsl(0, 0%, 74%);
+  --menu-text: #FFFFFF;
   --menu-icon: hsl(206, 5%, 42%);
   --nav-icon: hsl(0, 0%, 50%);
   --highlight: hsl(205, 90%, 60%);
   --interactive-primary: black;
-  --interactive-muted: hsl(210, 3%, 71%);
+  --interactive-muted: rgb(119, 119, 119);
   --interactive-muted-active: hsl(210, 4%, 71%);
-  --interactive-muted-alt: hsl(197, 19%, 78%);
-  --interactive-muted-alt-selected: hsl(206, 7%, 37%);
+  --interactive-muted-alt: #585b5e;
+  --interactive-muted-alt-selected: #1d85db;
   --background-primary: hsl(210, 17%, 98%);
   --background-primary-alt: hsl(197, 16%, 94%);
   --background-secondary: white;
@@ -50,11 +50,11 @@ $mobileNavigationWidthOpen: 220px;
   --background-modifier-accent-light: hsla(0, 0%, 0%, 0.02);
   --background-modifier-accent-dark: hsla(0, 0%, 0%, 0.3);
   --background-modifier-lighter: hsla(0, 0%, 100%, 0.06);
-  --background-modifier-border: hsla(0, 0%, 0%, 0.1);
+  --background-modifier-border: #db700b;
   --background-modifier-hover: hsla(240, 3%, 50%, 0.1);
   --backdrop-clue-start: hsla(202, 68%, 54%, 0.1);
   --backdrop-clue-end: hsla(202, 68%, 54%, 0.9);
-  --border: hsl(0, 0%, 90%);
+  --border: #595959;
   --border-alt: hsl(198, 18%, 86%);
   --border-highlight: hsl(200, 71%, 59%);
   --border-internal: hsl(18, 91%, 89%);
@@ -67,7 +67,7 @@ $mobileNavigationWidthOpen: 220px;
   --ok-color: hsl(41, 100%, 49%);
   --bad-color: hsl(30, 93%, 50%);
   --superbad-color: hsl(19, 90%, 51%);
-  --ghost-color: hsl(0, 0%, 74%);
+  --ghost-color: rgb(100, 100, 100);
   --danger-color: hsl(0, 65%, 55%);
   --pending-color: hsl(206, 7%, 28%);
   --elevation-stroke: 0 1px hsl(210, 7%, 94%);
@@ -106,7 +106,7 @@ $mobileNavigationWidthOpen: 220px;
   --interactive-muted: hsl(213, 3%, 64%);
   --interactive-muted-active: hsl(213, 3%, 35%);
   --interactive-muted-alt: hsl(209, 5%, 35%);
-  --interactive-muted-alt-selected: hsl(205, 4%, 75%);
+  --interactive-muted-alt-selected: #1d85db;
   --background-primary: hsl(230, 5%, 19%);
   --background-primary-alt: hsl(230, 5%, 21%);
   --background-secondary: hsl(230, 5%, 23%);
@@ -124,7 +124,7 @@ $mobileNavigationWidthOpen: 220px;
   --background-modifier-accent-light: hsla(0, 0%, 0%, 0.06);
   --background-modifier-accent-dark: hsla(0, 0%, 0%, 0.3);
   --background-modifier-lighter: hsla(0, 0%, 100%, 0.08);
-  --background-modifier-border: hsla(0, 0%, 0%, 0.17);
+  --background-modifier-border: #db700b;
   --background-modifier-hover: hsla(230, 5%, 36%, 0.4);
   --backdrop-clue-start: hsla(202, 68%, 54%, 0.1);
   --backdrop-clue-end: hsla(202, 68%, 54%, 0.9);
@@ -274,7 +274,7 @@ hr {
 
 .text-placeholder {
   color: var(--interactive-muted);
-}
+}text-muted
 
 .text-small {
   font-size: 12px;
@@ -2443,7 +2443,7 @@ textarea.form-control {
 
 select.form-control:not([multiple]) {
   @include bidi-style(padding-right, 34px, padding-left, 12px);
-
+  max-width: 340px;
   word-wrap: normal;
 }
 
@@ -3670,6 +3670,10 @@ ol.tabs li {
 
   &.auth-provider--weibo {
     background: hsl(0, 0%, 27%);
+  }
+
+  &.auth-provider--discord {
+    background: #5865F2;
   }
 
   &.auth-provider--saml {
@@ -6475,20 +6479,19 @@ a.list-group-item.active > .badge,
 }
 
 .form-group.is-changed label {
-  color: var(--text-muted);
   position: relative;
 }
 
 .form-group.is-changed label::before {
   position: absolute;
   content: '';
-  left: -10px;
-  width: 5px;
-  height: 5px;
-  top: 50%;
-  margin-top: -3px;
+  left: 5px;
+  width: 230px;
+  height: 2px;
+  top: 100%;
+  margin-top: -1px;
   border-radius: 100%;
-  background: var(--interactive-muted-alt);
+  background: #db700b;
 }
 
 .form-inline .form-group .btn {
@@ -7810,7 +7813,7 @@ a.list-group-item.active > .badge,
   top: 50%;
   margin-top: -3px;
   border-radius: 100%;
-  background: var(--interactive-muted-alt);
+  background: #db700b;
   box-shadow: 0 0 0 2px var(--background-primary);
 }
 
